@@ -28,8 +28,7 @@
 		"nette/security": "^3.2",
 		"nette/utils": "^4.0",
 		"latte/latte": "^3.1",
-		"tracy/tracy": "^2.12",
-		"mtr/minicrm": "^1.0"
+		"tracy/tracy": "^2.12"
 	},
 	"require-dev": {
 		"nette/tester": "^2.5",
