@@ -16,6 +16,12 @@ final class RouterFactory
 	{
 		$router = new RouteList;
 
+		/**
+		 * Minicrm routes		 * 
+		 * @see \Mtr\MiniCRM\Routing\RouterFactory
+		 */
+		$router->add(\Mtr\MiniCRM\Routing\RouterFactory::create());
+
 		$router->addRoute('<presenter>/<action>[/<id>]', 'Home:default');
 
 		return $router;
