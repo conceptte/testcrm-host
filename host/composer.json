@@ -29,7 +29,8 @@
 		"nette/utils": "^4.0",
 		"latte/latte": "^3.1",
 		"tracy/tracy": "^2.12",
-		"conceptte/testcrm": "^1.0"
+		"conceptte/testcrm": "^1.0",
+		"fakerphp/faker": "^1.24"
 	},
 	"require-dev": {
 		"nette/tester": "^2.5",
