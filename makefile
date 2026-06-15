@@ -12,7 +12,7 @@ COLOR_RESET := \033[0m
 
 install: build up composer require fs schema seed clear
 	@echo "$(COLOR_GREEN)Install complete.$(COLOR_RESET)"
-	@echo "Access the application at: http://localhost:$(APP_PORT)"
+	@echo "Access the application at: http://localhost:$(APP_PORT)/minicrm/"
 
 build:
 	$(DC) build
