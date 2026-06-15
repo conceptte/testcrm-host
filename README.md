@@ -65,6 +65,11 @@ docker compose exec app chmod -R 777 temp log
 docker compose exec app php vendor/conceptte/testcrm/database/schema.php
 docker compose exec app php vendor/conceptte/testcrm/database/seed.php
 ```
+|it could be after seeder `log` and `temp` directories are created with root permissions, so you might need to fix that again:
+
+```bash
+docker compose exec app chmod -R 777 temp log
+```
 
 Open `http://localhost:8085`.
 
