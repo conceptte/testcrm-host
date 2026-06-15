@@ -1,2 +1,80 @@
 # testcrm-host
-Dockerized test app
+
+Dockerized host app for [MiniCRM](https://github.com/conceptte/testcrm) package. Runs PHP, Nginx, and MariaDB in Docker containers.
+
+## Requirements
+
+- Docker
+- Docker Compose
+- `make` (optional, but easier)
+
+## Quick start (with make)
+
+```bash
+git clone https://github.com/conceptte/testcrm-host.git
+cd testcrm-host
+make install
+```
+
+That's it. Open `http://localhost:8085` when done.
+
+## Manual setup (without make)
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/conceptte/testcrm-host.git
+cd testcrm-host
+```
+
+Default values in `.env`:
+
+```
+APP_PORT=8085
+DB_DATABASE=app
+DB_USERNAME=app_user
+DB_PASSWORD=secret
+DB_ROOT_PASSWORD=root_secret
+DB_PORT=3306
+```
+
+2. Build and start containers:
+
+```bash
+docker compose build
+docker compose up -d
+```
+
+3. Install PHP dependencies:
+
+```bash
+docker compose exec app composer install
+docker compose exec app composer require conceptte/testcrm
+```
+
+4. Create temp and log directories:
+
+```bash
+docker compose exec app mkdir -p temp log
+docker compose exec app chmod -R 777 temp log
+```
+
+5. Create database schema and seed test data:
+
+```bash
+docker compose exec app php vendor/conceptte/testcrm/database/schema.php
+docker compose exec app php vendor/conceptte/testcrm/database/seed.php
+```
+
+Open `http://localhost:8085`.
+
+## Other commands
+
+```bash
+make down          # Stop containers
+make restart       # Restart containers
+make clear         # Clean temp and log files
+make reset-db      # Recreate schema and reseed
+make shell         # Open shell inside app container
+make destroy       # Remove containers and all volumes (data will be lost)
+```
