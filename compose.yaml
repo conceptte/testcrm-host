@@ -52,17 +52,5 @@ services:
       retries: 10
       start_period: 30s
 
-  phpmyadmin:
-    image: phpmyadmin:latest
-    depends_on:
-      db:
-        condition: service_healthy
-    environment:
-      PMA_HOST: db
-      PMA_PORT: 3306
-      PMA_ARBITRARY: 0
-    ports:
-      - "8080:80"
-
 volumes:
   db_data:

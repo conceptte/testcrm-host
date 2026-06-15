@@ -5,10 +5,9 @@ COLOR_GREEN := \033[32m
 COLOR_YELLOW := \033[33m
 COLOR_RESET := \033[0m
 
-.PHONY: install build up composer schema seed down
+.PHONY: install build up composer fs schema seed down
 
-install: build up composer schema seed
-	@docker compose exec app chmod -R 777 temp log
+install: build up composer fs schema seed
 
 build:
 	docker compose build
@@ -19,6 +18,11 @@ up:
 composer:
 	docker compose exec app composer install && \
 	docker compose exec app composer require conceptte/testcrm
+
+fs:
+	@echo "$(COLOR_GREEN)Setting up file system permissions...$(COLOR_RESET)" && \
+	docker compose exec app mkdir -p temp log && \
+	docker compose exec app chmod -R 777 temp log
 
 schema:
 	@echo  "$(COLOR_GREEN)Creating database schema...$(COLOR_RESET)" && \
