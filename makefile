@@ -28,20 +28,19 @@ composer:
 	$(APP) composer install
 
 require:
-	$(APP) composer show conceptte/testcrm >/dev/null 2>&1 || \
 	$(APP) composer require conceptte/testcrm
 
 fs:
-	@echo "$(COLOR_GREEN)Setting up file system permissions...$(COLOR_RESET)" && \
-	$(APP) mkdir -p temp log && \
-	$(APP) chmod -R 777 temp log && \
+	@echo "$(COLOR_GREEN)Setting up file system permissions...$(COLOR_RESET)"
+	$(APP) mkdir -p temp log
+	$(APP) chmod -R 777 temp log
 
 schema:
-	@echo "$(COLOR_GREEN)Creating database schema...$(COLOR_RESET)" && \
+	@echo "$(COLOR_GREEN)Creating database schema...$(COLOR_RESET)"
 	$(APP) php vendor/conceptte/testcrm/database/schema.php
 
 seed:
-	@echo "$(COLOR_YELLOW)Seeding database with sample data...$(COLOR_RESET)" && \
+	@echo "$(COLOR_YELLOW)Seeding database with sample data...$(COLOR_RESET)"
 	$(APP) php vendor/conceptte/testcrm/database/seed.php
 
 clear:
