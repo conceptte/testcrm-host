@@ -12,6 +12,7 @@ COLOR_RESET := \033[0m
 
 install: build up composer require fs schema seed clear
 	@echo "$(COLOR_GREEN)Install complete.$(COLOR_RESET)"
+	@echo "Access the application at: http://localhost:$(PORT)"
 
 build:
 	$(DC) build
