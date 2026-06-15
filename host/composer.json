@@ -4,15 +4,7 @@
 	"keywords": ["nette"],
 	"type": "project",
 	"license": ["MIT", "BSD-3-Clause", "GPL-2.0-only", "GPL-3.0-only"],
-	"repositories": [
-		{
-			"type": "path",
-			"url": "/var/repo",
-			"options": {
-				"symlink": true
-			}
-		}
-	],
+	
 	"require": {
 		"php": ">= 8.2",
 		"nette/application": "^3.2.3",
@@ -28,8 +20,7 @@
 		"nette/security": "^3.2",
 		"nette/utils": "^4.0",
 		"latte/latte": "^3.1",
-		"tracy/tracy": "^2.12",
-		"conceptte/testcrm": "^1.0"
+		"tracy/tracy": "^2.12"
 	},
 	"require-dev": {
 		"nette/tester": "^2.5",

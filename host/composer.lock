@@ -4,38 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a7a51f7a95d5985c5167be5d75043ee",
+    "content-hash": "db2055d05edb301c4f0c078af2ff7d6a",
     "packages": [
-        {
-            "name": "conceptte/testcrm",
-            "version": "v1.0.1",
-            "dist": {
-                "type": "path",
-                "url": "/var/repo",
-                "reference": "766b00eae61c7399fe3b88ea0d6d68cc9afcc940"
-            },
-            "require": {
-                "nette/di": "^3.1",
-                "php": ">=8.1"
-            },
-            "require-dev": {
-                "fakerphp/faker": "^1.24"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Mtr\\MiniCRM\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "MiniCRM extension for Nette Framework (test example)",
-            "transport-options": {
-                "symlink": true,
-                "relative": false
-            }
-        },
         {
             "name": "latte/latte",
             "version": "v3.1.4",
