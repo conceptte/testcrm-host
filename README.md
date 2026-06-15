@@ -71,7 +71,16 @@ docker compose exec app php vendor/conceptte/testcrm/database/seed.php
 docker compose exec app chmod -R 777 temp log
 ```
 
-Open `http://localhost:8085`.
+Open `http://localhost:8085/minicrm/`.
+API endpoints are available at `http://localhost:8085/minicrm/api/v1/`:
+
+- `http://localhost:8085/minicrm/api/v1/customers` - list of customers
+    available query parameters:
+    - `q` (string) - search customers by name or email
+    - `page` (int) - page number for pagination
+    - `limit` (int) - number of items per page for pagination
+
+- `http://localhost:8085/minicrm/api/v1/customers/{public_id}` - details of a single customer
 
 ## Other commands
 
