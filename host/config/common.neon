@@ -11,10 +11,9 @@ application:
 
 
 database:
-	dsn: 'sqlite::memory:'
-	user:
-	password:
-
+	dsn: 'mysql:host=db:3306;dbname=app;charset=utf8'
+	user: app_user
+	password: secret
 
 latte:
 	strictParsing: yes
