@@ -10,7 +10,7 @@ COLOR_RESET := \033[0m
 
 .PHONY: install build up down restart composer require fs schema seed clear reset-db destroy shell
 
-install: build up composer require fs schema seed clear
+install: build up composer require fs schema seed assets clear
 	@echo "$(COLOR_GREEN)Install complete.$(COLOR_RESET)"
 	@echo "Access the application at: http://localhost:$(APP_PORT)/minicrm/"
 
@@ -57,6 +57,9 @@ shell:
 
 db:
 	$(DC) exec db sh
+
+assets:
+	$(APP) sh -c 'mkdir -p www/assets && rm -rf www/assets/minicrm && cp -r vendor/conceptte/testcrm/assets/minicrm www/assets/minicrm'
 
 destroy:
 	@echo "$(COLOR_YELLOW)WARNING: All docker volumes will be deleted.$(COLOR_RESET)"
