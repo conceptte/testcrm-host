@@ -59,7 +59,13 @@ docker compose exec app mkdir -p temp log
 docker compose exec app chmod -R 777 temp log
 ```
 
-5. Create database schema and seed test data:
+5. Publish assets:
+
+```bash
+docker compose exec app sh -c 'mkdir -p www/assets && cp -r vendor/conceptte/testcrm/assets/minicrm www/assets/minicrm'
+```
+
+6. Create database schema and seed test data:
 
 ```bash
 docker compose exec app php vendor/conceptte/testcrm/database/schema.php
