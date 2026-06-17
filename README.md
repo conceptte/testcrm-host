@@ -92,6 +92,9 @@ API endpoints are available at `http://localhost:8085/minicrm/api/v1/`:
 ## Other commands
 
 ```bash
+make install       # Build and start containers, install dependencies, set permissions, publish assets, create database schema and seed test data
+make build         # Build containers
+make up            # Start containers
 make down          # Stop containers
 make restart       # Restart containers
 make assets        # Publish assets to www/assets
