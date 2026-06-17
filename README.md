@@ -15,6 +15,7 @@ git clone https://github.com/conceptte/testcrm-host.git
 cd testcrm-host
 make install
 ```
+reffer to [Makefile](https://github.com/conceptte/testcrm-host/blob/main/makefile) for details of what `make install` does, but basically it builds and starts containers, installs dependencies, sets permissions, publishes assets, creates database schema and seeds test data.
 
 That's it. Open `http://localhost:8085` when done.
 
