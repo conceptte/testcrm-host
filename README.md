@@ -93,6 +93,7 @@ API endpoints are available at `http://localhost:8085/minicrm/api/v1/`:
 ```bash
 make down          # Stop containers
 make restart       # Restart containers
+make assets        # Publish assets to www/assets
 make clear         # Clean temp and log files
 make reset-db      # Recreate schema and reseed
 make shell         # Open shell inside app container
