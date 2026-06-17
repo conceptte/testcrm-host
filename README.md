@@ -53,7 +53,7 @@ docker compose exec app composer install
 docker compose exec app composer require conceptte/testcrm
 ```
 
-4. Create temp and log directories:
+4. Create temp and log directories (i didnt setup users and permissions in Dockerfile, so it because 777, which is not ideal for security, but works for development):
 
 ```bash
 docker compose exec app mkdir -p temp log
@@ -73,7 +73,7 @@ docker compose exec app php vendor/conceptte/testcrm/database/schema.php
 docker compose exec app php vendor/conceptte/testcrm/database/seed.php
 ```
 |it could be after seeder `log` and `temp` directories are created with root permissions, so you might need to fix that again:
-
+(again 777 is not ok for production, but works for development)
 ```bash
 docker compose exec app chmod -R 777 temp log
 ```
