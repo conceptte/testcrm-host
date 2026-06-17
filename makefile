@@ -10,7 +10,7 @@ COLOR_RESET := \033[0m
 
 .PHONY: install build up down restart composer require fs schema seed clear reset-db destroy shell
 
-install: build up composer require fs schema seed assets clear
+install: build up composer require fs assets schema seed clear
 	@echo "$(COLOR_GREEN)Install complete.$(COLOR_RESET)"
 	@echo "Access the application at: http://localhost:$(APP_PORT)/minicrm/"
 
